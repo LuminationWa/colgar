@@ -3,7 +3,8 @@ export async function getData(url) {
     cache: "no-cache",
   });
   if (!res.ok) {
-    throw new Error("Failed to fetch data");
+    console.log("Error",  "Failed to fetch data");
+    return false;
   }
   return res.json();
 }
