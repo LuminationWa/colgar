@@ -14,6 +14,9 @@ module.exports = {
         "bgDesk": "url('/pictures/bgDesk.png')",
         "bgMobile": "url('/pictures/bgMobile.png')",
       },
+      fontFamily: {
+
+      },
     },
   },
   plugins: [],
