@@ -1,7 +1,10 @@
 "use client";
 import { React, useRef, useState, useEffect } from "react";
 
-const Carousel = () => {
+const Carousel = (props) => {
+  const accuData = props.data[0];
+  const openData = props.data[1];
+  const tomorrowData = props.data[2];
   const carouselRef1 = useRef(null);
   const carouselRef2 = useRef(null);
   const carouselRef3 = useRef(null);
@@ -69,10 +72,6 @@ const Carousel = () => {
               </div>
               <div>Noche</div>
             </div>
-            <div>
-              <p>Maxima</p>
-              <p>Minima</p>
-            </div>
           </div>
         </div>
       </div>
@@ -87,14 +86,9 @@ const Carousel = () => {
           </div>
           <div className="flex justify-between">
             <div>
-              <div>
-                <p>Dia</p>
-              </div>
-              <div>Noche</div>
-            </div>
-            <div>
-              <p>Maxima</p>
-              <p>Minima</p>
+              <p>Temp: {openData.temp}</p>
+              <p>Maxima: {openData.tempMin}</p>
+              <p>Minima: {openData.tempMax}</p>
             </div>
           </div>
         </div>
@@ -108,17 +102,13 @@ const Carousel = () => {
           <div className="flex">
             <img src="/pictures/tomorrow.png" alt="Tomorrow.io logo" />
           </div>
-          <div className="flex justify-between">
-            <div>
-              <div>
-                <p>Dia</p>
-              </div>
-              <div>Noche</div>
-            </div>
-            <div>
-              <p>Maxima</p>
-              <p>Minima</p>
-            </div>
+          <div className="flex flex-col">
+            <p>{tomorrowData.desc}</p>
+            <h3>Hoy {tomorrowData.probLluvia}</h3>
+            <h3>Mañana {tomorrowData.probLluvia2}</h3>
+            <h3>Pasado {tomorrowData.probLluvia3}</h3>
+            <p>Maxima: {tomorrowData.tempMin}</p>
+            <p>Minima: {tomorrowData.tempMax}</p>
           </div>
         </div>
       </div>

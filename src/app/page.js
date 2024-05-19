@@ -1,4 +1,9 @@
-import { getData, formatAccuData, formatOpenData, formatTomorrowData } from "../libs/fetchData";
+import {
+  getData,
+  formatAccuData,
+  formatOpenData,
+  formatTomorrowData,
+} from "../libs/fetchData";
 import Display from "@/components/Display";
 import Carousel from "@/components/sections/Carousel";
 
@@ -7,16 +12,29 @@ export default async function Home() {
   // const openData = await getData(process.env.OPENWEATHER);
   // const tomorrowData = await getData(process.env.TOMORROW);
   // const dataFormated = formatTomorrowData(tomorrowData);
-  const backupData = {
-    fecha: "Fecha de ejemplo",
-    lluviaDia: false,
-    lluviaNoche: true,
+  const fetchAllData = async () => {
+    const dataArr = [];
+    // const accuData = await getData(process.env.ACCUWEATHER);
+    // const openData = await getData(process.env.OPENWEATHER);
+    // const tomorrowData = await getData(process.env.TOMORROW);
+    const accuData = false;
+    const openData = false;
+    const tomorrowData = false;
+    dataArr.push(accuData, openData, tomorrowData);
+    return dataArr;
   };
-  // const dataFormated = formatAccuData(accuData);
+  const formatAllData = async () => {
+    //1 is accuWeather, 2 is openWeather, 3 is Tomorrow
+    const dataArr = await fetchAllData();
+    const formatedData = [];
+    formatedData.push(formatAccuData(dataArr[0]), formatOpenData(dataArr[1]), formatTomorrowData(dataArr[2]));
+    return formatedData;    
+  };
+  const data = await formatAllData();
   return (
     <main className="flex min-h-screen flex-col items-center justify-between bg-bgMobile lg:bg-bgDesk bg-cover bg-center bg-repeat font-mono">
-      <Display data={backupData} />
-      <Carousel />
+      <Display data={data} />
+      <Carousel data={data}/>
     </main>
   );
 }
