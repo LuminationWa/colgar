@@ -23,23 +23,6 @@ const Display = (props) => {
             </>
           )}
         </div>
-        <div>
-          <div>
-            <div>
-              <h2>Accuweather</h2>
-            </div>
-            <div>
-              <div>
-                <h1>Dia</h1>
-                {lluviaDia ? <h1>Lluvia</h1> : <h1>No lluvia</h1>}
-              </div>
-              <div>
-                <h1>Noche</h1>
-                {lluviaNoche ? <h1>Lluvia</h1> : <h1>No lluvia</h1>}
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );

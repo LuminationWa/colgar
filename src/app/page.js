@@ -1,10 +1,12 @@
-import { getData, formatAccuData, formatOpenData } from "../libs/fetchData";
+import { getData, formatAccuData, formatOpenData, formatTomorrowData } from "../libs/fetchData";
 import Display from "@/components/Display";
 import Carousel from "@/components/sections/Carousel";
 
 export default async function Home() {
   // const accuData = await getData(process.env.ACCUWEATHER);
   // const openData = await getData(process.env.OPENWEATHER);
+  // const tomorrowData = await getData(process.env.TOMORROW);
+  // const dataFormated = formatTomorrowData(tomorrowData);
   const backupData = {
     fecha: "Fecha de ejemplo",
     lluviaDia: false,

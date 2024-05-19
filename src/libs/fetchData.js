@@ -26,3 +26,14 @@ export function formatOpenData(rawData) {
     desc: rawData.weather[0].description,
   }
 }
+
+export function formatTomorrowData(rawData) {
+  const baseData = rawData.timelines.daily;
+  return {
+      probLluvia: baseData[0].values.precipitationProbabilityAvg,
+      probLluvia2: baseData[1].values.precipitationProbabilityAvg,
+      probLluvia3: baseData[2].values.precipitationProbabilityAvg,
+      tempMin: baseData[0].values.temperatureMin,
+      tempMax: baseData[0].values.temperatureMax,
+  }
+}
