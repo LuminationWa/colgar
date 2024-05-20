@@ -4,7 +4,7 @@ import {
   formatOpenData,
   formatTomorrowData,
 } from "../libs/fetchData";
-import Display from "@/components/Display";
+import Display from "@/components/sections/Display";
 import Carousel from "@/components/sections/Carousel";
 
 export default async function Home() {

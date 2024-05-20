@@ -8,6 +8,10 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+* {
+  font-family: "Open Sans", Courier, monospace;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -30,4 +34,55 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px #ffd700;
+  }
+  to {
+    box-shadow: 0 0 200px #fa2c11;
+  }
+}
+
+@keyframes text-change {
+  from {
+    font-size: 6rem;
+  }
+  to {
+    font-size: 6.5rem;
+  }
+}
+
+.sun-image {
+  background-color: rgba(255, 255, 255, 50%);
+  box-shadow: 0 0 20px #fff, 0 0 40px #ffd700, 0 0 80px #ffc107;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.display-h1 {
+  font-size: 6.5rem;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.h1-night {
+  -webkit-text-stroke: 2px rgb(116, 116, 253);  
+  animation: text-change 2s ease-in-out infinite alternate;
+}
+
+.h1-day {
+  color:rgb(255, 229, 111);
+  -webkit-text-stroke: 3px rgb(255, 149, 87);  
+  animation: text-change 1s ease-in-out infinite alternate;
+}
+
+.transparent-night {
+  background-color: rgba(126, 246, 250, 0.25);
+}
+
+.transparent-day {
+  background-color: rgba(250, 165, 125, 0.25);
 }

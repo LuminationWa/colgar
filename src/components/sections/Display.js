@@ -5,36 +5,37 @@ const Display = (props) => {
   const { temp, desc } = props.data[1];
   const { probLluvia, probLluvia2, probLluvia3 } = props.data[2];
   return (
-    <div className="flex min-h-screen min-w-full flex-col items-center p-6 text-black">
+    <div className="flex min-h-screen min-w-full flex-col items-center p-6 text-black transparent-night">
       <div className="Section-1">
-        <div className="flex min-h-screen min-w-full flex-col items-center justify-center gap-8">
+        <div className="flex min-h-screen min-w-full flex-col items-center justify-center gap-3">
           <h1 className="text-xl">{fecha}</h1>
           <h2 className="hidden lg:block">{temp}°C</h2>
           {lluviaDia ? (
             <>
               <div>
                 <Image
-                  alt="Happy cat"
-                  src="/pictures/rainCat.jpg"
+                  alt="Rain cat"
+                  src="/pictures/rainCat2.png"
                   width={300}
                   height={300}
                   className="rounded-[50%]"
                 ></Image>
               </div>
-              <h1 className="text-2xl bold">Mal dia para colgar</h1>
+              <h1 className="display-h1 h1-night">No colgar</h1>
+              <p>{desc}</p>
             </>
           ) : (
             <>
               <div>
                 <Image
                   alt="Happy cat"
-                  src="/pictures/colgarCat.jpg"
+                  src="/pictures/colgarCat2.png"
                   width={300}
                   height={300}
-                  className="rounded-[50%]"
+                  className="rounded-[50%] sun-image"
                 ></Image>
               </div>
-              <h1 className="text-2xl bold">Buen dia para colgar</h1>
+              <h1 className="display-h1 h1-day">Colgar</h1>
               <p>{desc}</p>
             </>
           )}

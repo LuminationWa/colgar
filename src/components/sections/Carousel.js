@@ -59,12 +59,9 @@ const Carousel = (props) => {
     >
       <div
         ref={carouselRef1}
-        className="lg:grid grid-cols-[65%_35%] transition-all ease duration-1000 w-[100%] max-w-[1368px] z-0"
+        className="min-h-screen lg:grid grid-cols-[65%_35%] transition-all ease duration-1000 w-[100%] max-w-[1368px] z-0 bg-red-600"
       >
-        <div className="flex flex-col bg-red-600 w-[100%] max-w-[1368px] py-10 px-8 gap-12">
-          <div className="flex">
-            <img src="/pictures/accuweather.png" alt="AccuWeather logo" />
-          </div>
+        <div className="flex flex-col w-[100%] h-[100%] max-w-[1368px] py-10 px-8">
           <div className="flex justify-between">
             <div>
               <div>
@@ -73,17 +70,17 @@ const Carousel = (props) => {
               <div>Noche</div>
             </div>
           </div>
+          <div className="flex">
+            <img src="/pictures/accuweather.png" alt="AccuWeather logo" className="max-w-[300px]"/>
+          </div>
         </div>
       </div>
 
       <div
-        className="lg:grid grid-cols-[65%_35%] transition-all ease duration-1000 w-[100%] max-w-[1368px] absolute opacity-0"
+        className="h-[100%] lg:grid grid-cols-[65%_35%] transition-all ease duration-1000 w-[100%] max-w-[1368px] absolute opacity-0 bg-red-600"
         ref={carouselRef2}
       >
-        <div className="flex flex-col bg-red-600 w-[100%] max-w-[1368px] py-10 px-8 gap-12">
-          <div className="flex">
-            <img src="/pictures/openweather.png" alt="OpenWeather logo" />
-          </div>
+        <div className="flex flex-col w-[100%] h-[100%] max-w-[1368px] py-10 px-8">
           <div className="flex justify-between">
             <div>
               <p>Temp: {openData.temp}</p>
@@ -91,17 +88,17 @@ const Carousel = (props) => {
               <p>Minima: {openData.tempMax}</p>
             </div>
           </div>
+          <div className="flex">
+            <img src="/pictures/openweather.png" alt="OpenWeather logo" className="max-w-[300px]"/>
+          </div>
         </div>
       </div>
 
       <div
-        className="lg:grid grid-cols-[65%_35%] transition-all ease duration-1000 w-[100%] max-w-[1368px] absolute opacity-0"
+        className="h-[100%] lg:grid grid-cols-[65%_35%] transition-all ease duration-1000 w-[100%] max-w-[1368px] absolute opacity-0 bg-red-600"
         ref={carouselRef3}
       >
-        <div className="flex flex-col bg-red-600 w-[100%] max-w-[1368px] py-10 px-8 gap-12">
-          <div className="flex">
-            <img src="/pictures/tomorrow.png" alt="Tomorrow.io logo" />
-          </div>
+        <div className="flex flex-col w-[100%] h-[100%] max-w-[1368px] py-10 px-8">
           <div className="flex flex-col">
             <p>{tomorrowData.desc}</p>
             <h3>Hoy {tomorrowData.probLluvia}</h3>
@@ -109,6 +106,9 @@ const Carousel = (props) => {
             <h3>Pasado {tomorrowData.probLluvia3}</h3>
             <p>Maxima: {tomorrowData.tempMin}</p>
             <p>Minima: {tomorrowData.tempMax}</p>
+          </div>
+          <div className="flex">
+            <img src="/pictures/tomorrow.png" alt="Tomorrow.io logo" className="max-w-[300px]"/>
           </div>
         </div>
       </div>
