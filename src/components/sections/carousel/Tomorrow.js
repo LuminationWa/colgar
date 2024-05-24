@@ -4,29 +4,41 @@ import { useEffect, useState } from "react";
 const Tomorrow = (props) => {
   const tomorrowData = props.tomorrowData;
   const [styles, setStyles] = useState(props.styles);
+  console.log(tomorrowData)
   useEffect(() => {
     setStyles(props.styles);
-    console.log("aaa")
   }, [props.styles]);
   return (
     <div
-      className={`h-[100%] lg:grid grid-cols-[65%_35%] transition-all ease duration-1000 w-[100%] max-w-[1368px] bg-red-600 ${styles}`}
+      className={`transition-all ease duration-1000 w-[100%] max-w-[1368px] bg-red-600 ${styles} lg:bg-transparent`}
     >
-      <div className="flex flex-col w-[100%] h-[100%] max-w-[1368px] py-10 px-8">
-        <div className="flex">
+      <div className="flex flex-col w-[100%] h-[100%] max-w-[1368px] py-10 px-8 ">
+        <div className="flex justify-center">
           <img
             src="/pictures/tomorrow.png"
             alt="Tomorrow.io logo"
-            className="max-w-[300px]"
+            className="max-w-[100%]"
           />
         </div>
-        <div className="flex flex-col">
-          <p>{tomorrowData.desc}</p>
-          <h3>Hoy {tomorrowData.probLluvia}</h3>
-          <h3>Mañana {tomorrowData.probLluvia2}</h3>
-          <h3>Pasado {tomorrowData.probLluvia3}</h3>
-          <p>Maxima: {tomorrowData.tempMin}</p>
-          <p>Minima: {tomorrowData.tempMax}</p>
+        <div className="flex flex-col items-center justify-center text-center gap-8">
+          <div>
+            <p className="text-2xl">Máxima: {tomorrowData.tempMin}</p>
+            <p className="text-2xl">Mínima: {tomorrowData.tempMax}</p>
+          </div>
+          <div className="flex gap-6">
+            <div className="flex flex-col">
+              <h3 className="text-2xl">Hoy</h3>
+              <p> {tomorrowData.probLluvia}</p>
+            </div>
+            <div className="flex flex-col">
+              <h3 className="text-2xl">Mañana</h3>
+              <p> {tomorrowData.probLluvia2}</p>
+            </div>
+            <div className="flex flex-col">
+              <h3 className="text-2xl">Pasado</h3>
+              <p> {tomorrowData.probLluvia3}</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

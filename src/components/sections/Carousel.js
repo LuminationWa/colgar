@@ -44,7 +44,7 @@ const Carousel = (props) => {
 
   return (
     <div
-      className="w-[100%] max-w-[1368px] relative flex lg:px-8"
+      className="min-h-screen w-[100%] max-w-[1368px] relative flex lg:px-8"
       //Event handlers for swiping
       onTouchStart={(e) => {
         touchStartX = e.changedTouches[0].screenX;

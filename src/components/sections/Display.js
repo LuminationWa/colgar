@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Image from "next/image";
 import { useRef } from "react";
 
@@ -24,16 +24,31 @@ const Display = (props) => {
                   className="rounded-[50%]"
                 ></Image>
               </div>
-              <button className="flex items-center gap-1" onClick={
-                () => {
+              <button
+                className="flex items-center gap-1"
+                onClick={() => {
                   nightRef.current.style.opacity = 1;
-                }
-              }>
-                <h2 className="text-4xl font-bold">Muchas nubes</h2>
-                <img src="./pictures/icons/arrow.svg" className="w-[20px]" alt="arrow"></img>
+                }}
+              >
+                <h2 className="text-4xl white-stroke font-bold">
+                  Muchas nubes
+                </h2>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24 "
+                  fill="currentColor"
+                  className="text-[rgb(30,30,119)]"
+                >
+                  <polygon points="7.293 4.707 14.586 12 7.293 19.293 8.707 20.707 17.414 12 8.707 3.293 7.293 4.707" />
+                </svg>
               </button>
               <div className="text-center">
-                <div className="flex-col gap-2 lg:flex text-l opacity-0" ref={nightRef}>
+                <div
+                  className="flex-col gap-6 lg:flex text-l opacity-0 transition-all ease duration-1000 p2"
+                  ref={nightRef}
+                >
                   <h2>Lluvia</h2>
                   <div className="flex gap-8">
                     <div className="flex flex-col">

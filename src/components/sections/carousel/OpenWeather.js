@@ -9,15 +9,14 @@ const OpenWeather = (props) => {
   }, [props.styles]);
   return (
     <div
-    className={`h-[100%] transition-all ease duration-1000 w-[100%] max-w-[1368px] bg-red-600 ${styles}`}
-  >
-    <div className="flex flex-col w-[100%] h-[100%] max-w-[1368px] py-10 px-8">
-      <div className="flex flex-col justify-between">
+      className={`transition-all ease duration-1000 w-[100%] max-w-[1368px] bg-red-600 ${styles}`}
+    >
+      <div className="flex flex-col w-[100%] h-[100%] max-w-[1368px] py-10 px-8">
         <div className="flex">
           <img
             src="/pictures/openWeather.png"
             alt="OpenWeather logo"
-            className="max-w-[300px]"
+            className="max-w-[100%]"
           />
         </div>
         <div>
@@ -27,7 +26,6 @@ const OpenWeather = (props) => {
         </div>
       </div>
     </div>
-  </div>
   );
 };
 
