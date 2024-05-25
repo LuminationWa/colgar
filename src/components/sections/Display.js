@@ -80,23 +80,6 @@ const Display = (props) => {
               <h2 className="text-4xl font-bold">{desc}</h2>
             </>
           )}
-          <div className="flex-col gap-2 text-center hidden lg:flex">
-            <h2>Probabilidad lluvia</h2>
-            <div className="flex gap-8">
-              <div className="flex flex-col">
-                <h3>Hoy</h3>
-                <p>{probLluvia}</p>
-              </div>
-              <div className="flex flex-col">
-                <h3>Mañana</h3>
-                <p>{probLluvia2}</p>
-              </div>
-              <div className="flex flex-col">
-                <h3>Pasado</h3>
-                <p>{probLluvia3}</p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
