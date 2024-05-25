@@ -14,7 +14,7 @@ export function formatAccuData(rawData) {
   if (!rawData) {
     return {
       fecha: "No data",
-      lluviaDia: false,
+      lluviaDia: "No data",
       lluviaNoche: "No data",
     };
   }
