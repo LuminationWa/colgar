@@ -8,18 +8,11 @@ import Display from "@/components/sections/Display";
 import Carousel from "@/components/sections/Carousel";
 
 export default async function Home() {
-  // const accuData = await getData(process.env.ACCUWEATHER);
-  // const openData = await getData(process.env.OPENWEATHER);
-  // const tomorrowData = await getData(process.env.TOMORROW);
-  // const dataFormated = formatTomorrowData(tomorrowData);
   const fetchAllData = async () => {
     const dataArr = [];
-    // const accuData = await getData(process.env.ACCUWEATHER);
-    // const openData = await getData(process.env.OPENWEATHER);
-    // const tomorrowData = await getData(process.env.TOMORROW);
-    const accuData = false;
-    const openData = false;
-    const tomorrowData = false;
+    const accuData = await getData(process.env.ACCUWEATHER);
+    const openData = await getData(process.env.OPENWEATHER);
+    const tomorrowData = await getData(process.env.TOMORROW);
     dataArr.push(accuData, openData, tomorrowData);
     return dataArr;
   };

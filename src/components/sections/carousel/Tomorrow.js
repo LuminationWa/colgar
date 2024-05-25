@@ -4,13 +4,12 @@ import { useEffect, useState } from "react";
 const Tomorrow = (props) => {
   const tomorrowData = props.tomorrowData;
   const [styles, setStyles] = useState(props.styles);
-  console.log(tomorrowData)
   useEffect(() => {
     setStyles(props.styles);
   }, [props.styles]);
   return (
     <div
-      className={`transition-all ease duration-1000 w-[100%] max-w-[1368px] bg-red-600 ${styles} lg:bg-transparent`}
+      className="absolute transition-all ease duration-1000 w-[100%] max-w-[1368px] bg-red-600 ${styles} lg:bg-transparent lg:text-black pointer-events-none" style={styles}
     >
       <div className="flex flex-col w-[100%] h-[100%] max-w-[1368px] py-10 px-8 ">
         <div className="flex justify-center">
@@ -22,8 +21,8 @@ const Tomorrow = (props) => {
         </div>
         <div className="flex flex-col items-center justify-center text-center gap-8">
           <div>
-            <p className="text-2xl">Máxima: {tomorrowData.tempMin}</p>
-            <p className="text-2xl">Mínima: {tomorrowData.tempMax}</p>
+            <p className="text-2xl">Máxima: {tomorrowData.tempMin}°C</p>
+            <p className="text-2xl">Mínima: {tomorrowData.tempMax}°C</p>
           </div>
           <div className="flex gap-6">
             <div className="flex flex-col">

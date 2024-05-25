@@ -8,7 +8,7 @@ const Display = (props) => {
   const { temp, desc } = props.data[1];
   const { probLluvia, probLluvia2, probLluvia3 } = props.data[2];
   return (
-    <div className="flex min-h-screen min-w-full flex-col items-center text-black transparent-night">
+    <div className={`flex min-h-screen min-w-full flex-col items-center text-black ${lluviaDia ? 'overlay-night' : 'overlay-day'}`}>
       <div className="Section-1">
         <div className="flex min-h-screen min-w-full flex-col items-center justify-center gap-3">
           <h2 className="top-0 right-0">{temp}°C</h2>
@@ -30,9 +30,7 @@ const Display = (props) => {
                   nightRef.current.style.opacity = 1;
                 }}
               >
-                <h2 className="text-4xl white-stroke font-bold">
-                  Muchas nubes
-                </h2>
+                <h2 className="text-4xl white-stroke font-bold">{desc}</h2>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -53,15 +51,15 @@ const Display = (props) => {
                   <div className="flex gap-8">
                     <div className="flex flex-col">
                       <h3>Hoy</h3>
-                      <p>3%</p>
+                      <p>{probLluvia}</p>
                     </div>
                     <div className="flex flex-col">
                       <h3>Mañana</h3>
-                      <p>4%</p>
+                      <p>{probLluvia2}</p>
                     </div>
                     <div className="flex flex-col">
                       <h3>Pasado</h3>
-                      <p>6%</p>
+                      <p>{probLluvia3}</p>
                     </div>
                   </div>
                 </div>
@@ -69,7 +67,7 @@ const Display = (props) => {
             </>
           ) : (
             <>
-              <div>
+              <div className="flex p-10">
                 <Image
                   alt="Happy cat"
                   src="/pictures/colgarCat2.png"
@@ -79,7 +77,7 @@ const Display = (props) => {
                 ></Image>
               </div>
               <h1 className="display-h1 h1-day">Colgar</h1>
-              <p>{desc}</p>
+              <h2 className="text-4xl font-bold">{desc}</h2>
             </>
           )}
           <div className="flex-col gap-2 text-center hidden lg:flex">
